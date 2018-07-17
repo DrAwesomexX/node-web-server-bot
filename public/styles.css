@@ -19,14 +19,14 @@ body {
 .header {
   display: grid;
   grid-column: full-start/full-end;
-  display: grid;
+
   grid-template-rows: 100vh 100vh;
   grid-template-columns: repeat(12, minmax(min-content, 14rem));
 }
 .header-text {
   display: grid;
   grid-column: 7/-1;
-  background-image: linear-gradient(to bottom, #273c75, #718093);
+  background-image: linear-gradient(to right bottom, #e1b12c, #2d3436);
   /* #ee5253, #c23616 */
 }
 .header-image {
@@ -58,18 +58,53 @@ body {
 
 .header-text {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, min-content));
+  /* grid-template-columns: repeat(auto-fit, minmax(max-content, max-content)); */
+  grid-template-rows: min-content min-content;
+  align-content: center;
+  justify-content: center;
+  grid-gap: 4rem;
 }
 
 .header-heading {
   display: grid;
   justify-content: center;
-  align-content: center;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 10rem;
+  background-image: linear-gradient(to right, #000, #c23616);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .header-paragraph {
   display: grid;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #2f3640;
+}
+
+.bot-button {
+  display: grid;
+  grid-template-rows: min-content;
   justify-content: center;
+  margin-top: 5rem;
+}
+
+.bot-button-1 {
+  font-size: 3rem;
+  font-family: 'Cookie', cursive;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 0.2rem 3rem;
+
+  box-shadow: 0 5rem 8rem rgb(0, 0, 0, 8);
+  transition: all 0.2s;
+}
+
+.bot-button-1:hover {
+  transform: translateY(-1rem);
 }
 .showcase {
   background-image: linear-gradient(to bottom, #273c75, #718093);
@@ -294,4 +329,15 @@ body {
       [col-start] minmax(min-content, 14rem) [col-end]
     )
     [center-end] 1fr [full-end];
+}
+/* media queries */
+@media only screen and (max-width: 31.25em) {
+  .header {
+    display: grid;
+    grid-column: full-start/full-end;
+  }
+  .header-image {
+    grid-column: 1/-1;
+    display: grid;
+  }
 }
